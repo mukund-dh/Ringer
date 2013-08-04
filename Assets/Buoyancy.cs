@@ -268,12 +268,12 @@ public class Buoyancy : MonoBehaviour
 				{
 					k = 0f;
 				}
-
+	
 				var velocity = rigidbody.GetPointVelocity(wp);
 				var localDampingForce = -velocity * DAMPFER * rigidbody.mass;
 				var force = localDampingForce + Mathf.Sqrt(k) * localArchimedesForce;
 				rigidbody.AddForceAtPosition(force, wp);
-
+	
 				forces.Add(new[] { wp, force }); // For drawing force gizmos
 			}
 		}
